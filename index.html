@@ -5,7 +5,7 @@
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-    <link rel="stylesheet" href="main.css">
+    
     <link rel="stylesheet" href="style.css">
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     
@@ -15,23 +15,18 @@
     <div class="nav">
       <div class="container">
         <ul class="pull-left">
-          <li><a href="#">Name</a></li>
-          <li><a href="#">Browse</a></li>
         </ul>
         <ul class="pull-right">
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">About the Team</a></li>
+    
         </ul>
       </div>
     </div>
 
     <div class="jumbotron">
       <div class="container">
-        <h1>Welcome to SmartMat CrowdCounting.</h1>
-        <p>Find crowd metrics on your favorite establishments in town.</p>
-        <a href="#">Learn More</a>
+        <h1>Result 1</h1>
+        <p>Find crowd metrics on your favorite establishments in Lawrence.</p>
+        <a href="aboutSmartmat.html">Learn More</a>
       </div>
     </div> 
 
@@ -39,24 +34,23 @@
 	  <div class="container">
 		<div class="row">
 	  	  <div class="col-md-4">
-			<h3>Search</h3>
+			<h3>Find a location</h3>
 
-      Enter a location by name, e.g. "Ambler Rec", or "Chipotle": <br>
+      Choose from a list of locations supported by SmartMat: <br>
 
-      <input type="text" name="search" placeholder="Search.."> <br>
-      <br>
+      <select>
+        <option value="Ambler">Ambler Student Rec</option>
+        <option value="Chipotle">Chipotle-23rd St.</option>
+        <option value="Hawk">The Jayhawk Cafe</option>
+      </select>
 
-      Type of establishment, e.g. "Gym", or "Restaurant": <br>
-      <input type="text" name="search" placeholder="Search.."> <br>
-      <br>
+      <br><br>
 
-      How far away? <br>
-      <input type="text" name="search" placeholder="Search.."> mi <br>
+      <input type="button" onclick="location.href='results.html';" value="Search" />
 
-			<p>From apartments and rooms to treehouses and boats: stay in unique spaces in 192 countries.</p>
-			<p><a href="#">See how to travel on Airbnb</a></p>
 		  </div>
-		  <div class="col-md-4">
+
+		  <div class="col-md-4" w3-include-html="picCarousel.html">
 			<h3>Host</h3>
 			<p>Renting out your unused space could pay your bills or fund your next vacation.</p>
 			<p><a href="#">Learn more about hosting</a></p>
@@ -69,5 +63,9 @@
 	    </div>
 	  </div>
 	</div>
+
+  <script>
+w3IncludeHTML();
+</script>
   </body>
 </html>
