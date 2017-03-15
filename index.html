@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<head>
+		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
     
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.w3schools.com/lib/w3data.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://www.w3schools.com/lib/w3data.js"></script>
     
-  </head>
+	</head>
+	<script type="text/javascript">		
+		window.onload = function updatePage(){
+			var locName = "Ambler Student Rec",
+			address = "1740 Watkins Center Drive"
+			city = "Lawrence",
+			state = "Ks",
+			zip = "66045",
+			crowdCount = 45;
+			debugger;
+			document.getElementById("name1").innerHTML = locName;
+			document.getElementById("loc1").innerHTML = address + "<br>" + city + ", " + state + " " + zip;
+			document.getElementById("count1").innerHTML = crowdCount;
+		}
+	</script>
+	<body>
+		<div class="nav">
+			<div class="container">
+				<ul class="pull-left">
+				</ul>
+				<ul class="pull-right">
+				</ul>
+			</div>
+		</div>
 
-  <body>
-    <div class="nav">
-      <div class="container">
-        <ul class="pull-left">
-        </ul>
-        <ul class="pull-right">
-    
-        </ul>
-      </div>
-    </div>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>SmartMat Crowd Counting</h1>
+				<p>Find crowd metrics on your favorite establishments in Lawrence.</p>
+				<a href="aboutSmartmat.html">Learn More</a>
+			</div>
+		</div> 
 
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Result 1</h1>
-        <p>Find crowd metrics on your favorite establishments in Lawrence.</p>
-        <a href="aboutSmartmat.html">Learn More</a>
-      </div>
-    </div> 
+		<div class="learn-more">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h3>Name</h3>
 
-    <div class="learn-more">
-	  <div class="container">
-		<div class="row">
-	  	  <div class="col-md-4">
-			<h3>Find a location</h3>
+						<!-- Choose from a list of locations supported by SmartMat: <br>
 
-      Choose from a list of locations supported by SmartMat: <br>
+						<select>
+							<option value="Ambler">Ambler Student Rec</option>
+							<option value="Chipotle">Chipotle-23rd St.</option>
+							<option value="Hawk">The Jayhawk Cafe</option>
+						</select>
 
-      <select>
-        <option value="Ambler">Ambler Student Rec</option>
-        <option value="Chipotle">Chipotle-23rd St.</option>
-        <option value="Hawk">The Jayhawk Cafe</option>
-      </select>
+						<br><br>
 
-      <br><br>
+						<input type="button" onclick="location.href='results.html';" value="Search" /> -->
 
-      <input type="button" onclick="location.href='results.html';" value="Search" />
-
-		  </div>
-
-		  <div class="col-md-4" w3-include-html="picCarousel.html">
-			<h3>Host</h3>
-			<p>Renting out your unused space could pay your bills or fund your next vacation.</p>
-			<p><a href="#">Learn more about hosting</a></p>
-	      </div>
-		  <div class="col-md-4">
-			<h3>Trust and Safety</h3>
-			<p>From Verified ID to our worldwide customer support team, we've got your back.</p>
-			<p><a href="#">Learn about trust at Airbnb</a></p>
-		  </div>
-	    </div>
-	  </div>
-	</div>
-
-  <script>
-w3IncludeHTML();
-</script>
-  </body>
+					</div>
+					<div class="col-md-5">
+						<h3>Location</h3>
+					</div>
+					<div class="col-md-3">
+						<h3>Current Crowd Count</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<p id="name1">name</p>
+					</div>
+					<div class="col-md-5">
+						<p id="loc1">loc</p>
+					</div>
+					<div class="col-md-3">
+						<p id="count1">count</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script>
+		w3IncludeHTML();
+	</script>
+	</body>
 </html>
