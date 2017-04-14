@@ -8,22 +8,10 @@
     
 		<link rel="stylesheet" href="style.css">
 		<script src="https://www.w3schools.com/lib/w3data.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     
 	</head>
-	<script type="text/javascript">		
-		window.onload = function updatePage(){
-			var locName = "Ambler Student Rec",
-			address = "1740 Watkins Center Drive"
-			city = "Lawrence",
-			state = "Ks",
-			zip = "66045",
-			crowdCount = 45;
-			debugger;
-			document.getElementById("name1").innerHTML = locName;
-			document.getElementById("loc1").innerHTML = address + "<br>" + city + ", " + state + " " + zip;
-			document.getElementById("count1").innerHTML = crowdCount;
-		}
-	</script>
+	
 	<body>
 		<div class="nav">
 			<div class="container">
@@ -46,23 +34,40 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<h3>Name</h3>
+						<h3>Name
 
-						<!-- Choose from a list of locations supported by SmartMat: <br>
+						<script type="text/javascript">
+						$(document).ready(function()
+						{
+        					$.getJSON("http://24.124.125.79:8080/matweb-0.1.1/mongoData", function(data, status)
+        					{
+        						var matData = data.matList;	
+            					$("p").text("Data: " + matData + "\nStatus: " + status);
+            					var str = JSON.stringify(matData, null, 2);
+            					//$("p").text(str);
+            					$("p").text(matData[1].locationName);
+            					
+            					var tr;
+            					for(var i = 0; i < 3; i++)
+            					{
+            						tr = $('<tr/>');
+            						tr.append("<td>" + matData[i].locationName + "</td>");
+            						tr.append("<td>" + matData[i].currentPopulation + "</td>");
+           							tr.append("<td>" + matData[i].streetAddress + "</td>");
+           							$('table').append(tr);
+           						}
+           						
+			   				});
 
-						<select>
-							<option value="Ambler">Ambler Student Rec</option>
-							<option value="Chipotle">Chipotle-23rd St.</option>
-							<option value="Hawk">The Jayhawk Cafe</option>
-						</select>
-
-						<br><br>
-
-						<input type="button" onclick="location.href='results.html';" value="Search" /> -->
+						});
+						</script>
+						<div id="table">
+						</div>
+						</h3>
 
 					</div>
 					<div class="col-md-5">
-						<h3>Location</h3>
+						<h4>Location</h4>
 					</div>
 					<div class="col-md-3">
 						<h3>Current Crowd Count</h3>
